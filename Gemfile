@@ -7,8 +7,10 @@ ruby '2.6.6'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'faraday'
 gem 'pg'
 gem 'puma', '~> 5.0'
+gem 'slack-ruby-client'
 
 group :development, :test do
   gem 'listen'

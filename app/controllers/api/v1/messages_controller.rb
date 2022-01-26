@@ -15,12 +15,15 @@ class Api::V1::MessagesController < ApplicationController
 
   # POST /messages
   def create
-    raise NotImplementedError
+    response = SendSlackMessage.call(text: message_params[:text], channel: message_params[:channel])
+    @message = Message.create!(payload: response)
+
+    render json: @message
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:text, :channel)
+    params.permit(:text, :channel)
   end
 end
