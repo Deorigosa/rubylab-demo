@@ -21,3 +21,6 @@ end
 
 group :development do
 end
+
+# TODO: rspec
+# TODO: vcr

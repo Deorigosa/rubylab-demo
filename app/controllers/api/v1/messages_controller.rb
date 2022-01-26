@@ -15,6 +15,8 @@ class Api::V1::MessagesController < ApplicationController
 
   # POST /messages
   def create
+    # TODO: Extract into job
+    # TODO: handle Slack rate limiting
     response = SendSlackMessage.call(text: message_params[:text], channel: message_params[:channel])
     @message = Message.create!(payload: response)
 
