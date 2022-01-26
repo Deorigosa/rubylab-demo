@@ -8,7 +8,7 @@ class Api::V1::MessagesController < ApplicationController
 
   # GET /messages/:id
   def show
-    @message = Message.find(message_params[:id])
+    @message = Message.find(params[:id])
 
     render json: @message.to_json
   end
@@ -21,6 +21,6 @@ class Api::V1::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(:id, :text, :channel)
+    params.require(:message).permit(:text, :channel)
   end
 end
