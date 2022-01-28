@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'aasm'
+
 class Message < ApplicationRecord
   include AASM
 
