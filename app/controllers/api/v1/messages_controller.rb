@@ -3,14 +3,14 @@ class Api::V1::MessagesController < ApplicationController
   def index
     @messages = Message.all
 
-    render json: @messages
+    render json: @messages.map(&:serialize)
   end
 
   # GET /messages/:id
   def show
     @message = Message.find(params[:id])
 
-    render json: @message
+    render json: @message.serialize
   end
 
   # POST /messages
@@ -20,7 +20,7 @@ class Api::V1::MessagesController < ApplicationController
     response = SendSlackMessage.call(text: message_params[:text], channel: message_params[:channel])
     @message = Message.create!(payload: response)
 
-    render json: @message
+    render json: @message.serialize
   end
 
   private
