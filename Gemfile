@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'faraday'
 gem 'pg'
 gem 'puma', '~> 5.0'
+gem 'sidekiq'
 gem 'slack-ruby-client'
 
 group :development, :test do
