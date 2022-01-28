@@ -1,5 +1,5 @@
 require 'slack'
 
 Slack.configure do |config|
-  config.token = "xoxb-2604763146227-2980952625255-15rn5YNbpMTIAI24YdRrYrsJ"
+  config.token = ENV.fetch('RUBY_LAB_SLACK_TOKEN', '')
 end
