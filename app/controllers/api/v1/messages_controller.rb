@@ -15,8 +15,8 @@ class Api::V1::MessagesController < ApplicationController
 
   # POST /messages
   def create
-    # TODO: Extract into job
     # TODO: handle Slack rate limiting
+    # https://github.com/sensortower/sidekiq-throttled
     message = Message.create!(
       status: :pending,
       text: message_params[:text],
