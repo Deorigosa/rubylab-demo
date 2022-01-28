@@ -17,10 +17,10 @@ group :development, :test do
   gem 'listen'
   gem 'pry'
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'vcr'
 end
 
-group :development do
+group :test do
+  gem 'webmock'
 end
-
-# TODO: rspec
-# TODO: vcr
